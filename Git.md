@@ -110,37 +110,37 @@
 
 ##  git的命令行基本操作：
 
-	1. `git init`	//初始化一个git管理库
+1. `git init`	//初始化一个git管理库
  	2.  `ls -ah`		//查看是否有.git文件，有则成功
  	3. `touch readme.txt`		//创建一个新的文本文档，用于测试git的用法
  	4. `vim readme.txt`			//编辑填入内容   i   ESC=> :wq 
-
-	5. `git add readme.txt`		//告诉git添加一个文档git add . //添加当前目录下的所有文档`
- 	6. `git commit -a -m ""` //添加并提交已修改的文档` 
- 	7. `git commit -m "wrote a readme file"	`	//提交    -m 是添加提交说明`	
- 	8. `git log`  	//查看之前的操作	--pretty=oneline  单行显示，方便查看`  	
- 	9. `git reset --hard HEAD^`		//退回往上的一个版本，HEAD~100就是往上一个版本`		
- 	10. `git reset --hard 版本号`		//只需要知道版本的前几位数字`		
- 	11. `git  reflog`		//查看每次命令`		
- 	12. `git status`		//查看暂存区的所有文件`		
- 	13. `git diff HEAD -- readme.txt`		//查看工作区和版本库里最新版本区别`		
- 	14. `git check -- readme.txt`		//将在提交前使用，r如果已提交则无法还原，eadme.txt文件在工作区的修改全部撤销掉，回到add或commit`		
- 	15. `git status`		//查看暂存区的在状态`		
- 	16. `git rm readme.txt` 	//删除工作区里的文件同时也要删除暂存区的文件` 	
- 	17. `git commit -m "delete"	`	//提交删除命令`	
- 	18. `git remote add origin https://github.com/kssdesummer/learngit`		//(远程库网址)连接远程库，origin是指远程库的名字，可以另外设置，如果连接的远程库较多，则需要区别`		
- 	19. `git push -u origin master	`	//将本地库的所有信息推送到远程库上，输入账号密码`	
- 	20. `git remote -v	`	//查看项目远程地址`	
- 	21. `git branch -a`		//查看当前所在分支（红色），以及其他分支`		
- 	22. `git  remote show origin`		//查看当前仓库其本信息`		
- 	23. `git remote rm origin`		//删除远程库origin`		
- 	24. `git checkout -b dev`		//创建并切换到dev分支 ：`git branch dev` ;  `dit checkout dev
- 	25. `git branch	`	//查看当前分支，代*为当前分支`	
- 	26. `git checkout master`		//切换会master分支`	
- 	27. `git merge dev`		//将指定分支合并到master上`		
- 	28. `git branch -d dev`		//删除指定分`		
- 	29. `git merge --no-ff -m "说明" 分支名`		//合并分支时禁止Fast forward模式，就是合并不删除原分支的历史纪录，可以看到做个合并，创建新的commit`		
- 	30. `git branch -D 分支名`		//删除未合并的分支
+  5. `git add readme.txt`		//告诉git添加一个文档git add . //添加当前目录下的所有文档
+  6. `git commit -a -m ""` //添加并提交已修改的文档
+  7. `git commit -m "wrote a readme file"	`	//提交    -m 是添加提交说明
+  8. `git log`  	//查看之前的操作	--pretty=oneline  单行显示，方便查看	
+  9. `git reset --hard HEAD^`		//退回往上的一个版本，HEAD~100就是往上一个版本
+  10. `git reset --hard 版本号`		//只需要知道版本的前几位数字
+  11. `git  reflog`		//查看每次命令
+  12. `git status`		//查看暂存区的所有文件
+  13. `git diff HEAD -- readme.txt`		//查看工作区和版本库里最新版本区别
+  14. `git check -- readme.txt`		//将在提交前使用，r如果已提交则无法还原，eadme.txt文件在工作区的修改全部撤销掉，回到add或commit
+  15. `git status`		//查看暂存区的在状态
+  16. `git rm readme.txt` 	//删除工作区里的文件同时也要删除暂存区的文件
+  17. `git commit -m "delete"	`	//提交删除命令
+  18. `git remote add origin https://github.com/kssdesummer/learngit`		//(远程库网址)连接远程库，origin是指远程库的名字，可以另外设置，如果连接的远程库较多，则需要区别
+  19. `git push -u origin master	`	//将本地库的所有信息推送到远程库上，输入账号密码
+  20. `git remote -v	`	//查看项目远程地
+  21. `git branch -a`		//查看当前所在分支（红色），以及其他分支
+  22. `git  remote show origin`		//查看当前仓库其本信息
+  23. `git remote rm origin`		//删除远程库origin
+  24. `git checkout -b dev`		//创建并切换到dev分支 ：`git branch dev` ;  `dit checkout dev
+  25. `git branch	`	//查看当前分支，代*为当前分支
+  26. `git checkout master`		//切换会master分支
+  27. `git merge dev`		//将指定分支合并到master上
+  28. `git branch -d dev`		//删除指定分
+  29. `git merge --no-ff -m "说明" 分支名`		//合并分支时禁止Fast forward模式，就是合并不删除原分支的历史纪录，可以看到做个合并，创建新的commit
+  30. `git branch -D 分支名`		//删除未合并的分支
+  31. `git pull origin master --allow-unrelated-histories` //拉取历史版本
 
 
 
