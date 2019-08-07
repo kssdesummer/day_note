@@ -96,6 +96,12 @@
 
    ​	返回值是一个数组，对应文档里的一组特定的元素节点
 
+4. 一次性选择所有,遍历 in 拿到下标,of拿到值
+
+   `document.querySelectAll`
+
+   `document.querySelect`
+
 ## 获取和设置属性
 
 1. `object.getAttribute()` ：参数是查询的属性名，用来获取属性下的内容，常与`getElementsByTagName` 合用，例如获取每行的title的内容：
