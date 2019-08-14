@@ -182,3 +182,43 @@
 
 ​	https://blog.csdn.net/lt326030434/article/details/90229298
 
+
+
+
+
+## Github 加速
+
+### 1 获取GitHub官方CDN地址
+
+打开https://www.ipaddress.com/
+
+查询以下三个链接的DNS解析地址 
+
+1. github.com 
+2. assets-cdn.github.com
+3. github.global.ssl.fastly.net
+
+修改hosts文件 : C:\Windows\System32\drivers\etc
+
+​	ubuntu :cd ~/   su   cd etc  vi hosts
+
+- github.com  192.30.253.112
+- assets-cdn.github.com 185.199.108.153
+- github.global.ssl.fastly.net 151.101.185.194
+
+刷新dns
+
+sudo /etc/init.d/networking restart 
+
+###  无法切换分支
+
+​	报错:工作区中下列未跟踪的文件将会因为检出操作而被覆盖:
+
+解决办法: git clean -d -fx  清除未跟踪文件
+
+https://blog.csdn.net/qq_28114645/article/details/79711923
+
+
+
+git fetch 先刷新远程库
+
