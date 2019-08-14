@@ -222,3 +222,32 @@ https://blog.csdn.net/qq_28114645/article/details/79711923
 
 git fetch 先刷新远程库
 
+
+
+### 小组推送内容
+
+1. 进行操作之前在dev先将远程dev分支拉下来	pull
+2. checkout dev-kangjinghao 然后pull 远程dev-kang ，拉远程 dev
+3. 操作 add commit
+4. push 远程 dev-kangjinghao 
+
+
+
+组长：
+加班内容：
+拉取远程所有组员的分支到本地；拉取远程dev分支到本地dev分支；
+将本地所有组员的内容合并到本地dev分支上；
+再将本地dev推送到远程dev分支上。
+
+产生冲突:
+查看冲突是由哪个组员提交的以及冲突的分支是哪个组员的。
+
+<<<<<<<<<
+
+当前最新内容
+
+`==========================`
+
+本地库内容
+
+`>>>>>>>>>>>>>>>>>>>>>`
