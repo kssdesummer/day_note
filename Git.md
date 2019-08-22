@@ -144,6 +144,20 @@
 
 
 
+### 暂存修改
+
+git stash 存储
+
+git stash apply 恢复
+
+git stash list 查看存储列表
+
+git stash apply stash@{1}  恢复最近一次存储
+
+
+
+相关链接 : https://blog.csdn.net/u012702547/article/details/78957937
+
 # linux 常见命令
 
  1. `sudo apt-get install `包名   ：安装一个包
