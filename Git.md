@@ -200,13 +200,17 @@
 
 修改hosts文件 : C:\Windows\System32\drivers\etc
 
-​	ubuntu :cd ~/   su   cd etc  vi hosts
+​	ubuntu :cd ~/   == >su ==>  cd /etc/  ==>  vi hosts
 
-- github.com  192.30.253.112
-- assets-cdn.github.com 185.199.108.153
-- github.global.ssl.fastly.net 151.101.185.194
+将下面粘贴在最后一行:
 
-刷新dns
+github.com  192.30.253.112
+
+assets-cdn.github.com 185.199.108.153
+
+github.global.ssl.fastly.net 151.101.185.194
+
+最后在终端,刷新dns
 
 sudo /etc/init.d/networking restart 
 
