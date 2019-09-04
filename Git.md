@@ -238,7 +238,11 @@ https://blog.csdn.net/qq_28114645/article/details/79711923
 
 
 
+#### 存储github登录密码
+
 git fetch 先刷新远程库
+
+git config --global credential.helper store  存储github登录密码
 
 
 
