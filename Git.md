@@ -144,6 +144,16 @@
 
 
 
+### 放弃追踪
+
+git reset HEAD 文件名
+
+git rm -r --cached 文件名　　//不删除本地文件
+
+git rm -r --f 文件名 　//删除本地文件
+
+
+
 ### 暂存修改
 
 git stash 存储
