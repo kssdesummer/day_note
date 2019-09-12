@@ -1,3 +1,65 @@
+# 前端三大框架
+
+*   Angular.js(最早的)
+*   Vue.js（最火的，关注人多）
+*   React.js（最流行，用的人较多）
+
+## 组件化：
+
+什么是模块化：是从代码的角度分析，把一些可复用代码，抽离成单个模块，便于羡慕维护和开发
+
+什么是组件化：是从UI界面的角度分析
+
+组件化的好处：随着项目规模增大，组件越来越多，使用方便，拼接完整的网页
+
+React实现：以js来组成，需要熟悉ES6
+
+## 虚拟DOM（Virtual Document Object Model）
+
+ *    DOM：浏览器中的概念，用js对象来表示页面上的元素，并提供操作DOM对象的API
+
+ *    React中的虚拟DOM：是框架中的概念，是程序员 用JS对象来模拟页面上的DOM和DOM嵌套
+
+ *    为什么要使用虚拟DOM：为了实现页面中，DOM元素的高效更新
+
+       *    获取DOM树
+
+             *    ```react
+                  //模拟div元素
+                  //html
+                  <div id='mydiv' title='test' data-index='0'>测试
+                  	<p>react</p>
+                  </div>
+                  
+                  //react
+                  const div ={
+                      tagName:'div', //标签
+                      attrs:{					//	属性
+                          id:'mydiv',
+                          title:'test',
+                          'data-index':'0'
+                      },childrens:[		//子节点内容
+                          '测试',{
+                              tagName:'p',
+                              attrs:{},
+                              childrens:[
+                                  'react'
+                              ]
+                          }
+                      ]
+                  }
+                  
+                  //假如只改了测试111，那只需要更改childrens里面的值就行了
+                  ```
+
+            	* 通过新旧DOM树的对比，看那些更改
+
+## Diff算法
+
+*   tree diff ：新旧两颗DOM树，==逐层对比==的过程，对比完成找到需要更新的元素
+*   component diff ：在进行tree diff时，==组件间对比==，相同的暂时不需要更新，不同的移除旧组件，更新新组件
+*   element diff ： 在组件对比的时候，两个组件类型相同，需要元素==对比==
+
 # React简介
 
 * React
@@ -16,6 +78,8 @@
       	– 在 React 应用中尽量使用 const 来声明变量
   *  箭头函数可以用来是你的函数变得更简洁
   * 在 React 中,通过继承类的方式来声明组件
+
+
 
 ## node 和 npm
 
@@ -637,6 +701,23 @@ function Button (props) {
 
 # 使用真实的API
 
+*   React
+    – 针对不同用例的 ES6 类组件生命周期方法
+    – componentDidMount() 如何用于 API 交互
+    – 条件渲染
+    – 表单上的合成事件
+    – 错误处理
+*    ES6
+    – 用模板字符串去组合字符串
+    – 扩展运算符用于不可变数据结构
+    – 可计算的属性名称
+*   General
+    – Hacker News API 交互
+    – 浏览器原生 fetch API
+    – 客户端和服务器端搜索
+    – 数据分页
+    – 客户端缓存
+
 ## 生命周期方法
 
 这些方法是嵌入 React 组件生命周期中的一组挂钩。它们可以在 ES6 类组件中使用,但是不能在无状态组件中使用。
@@ -685,21 +766,81 @@ constructor() 和 render() 生命周期方法是常用的生命周期方法。�
 
 ## 获取数据
 
+使用componentDidMount（）生命周期方法获取数据
 
 
 
+# 高级React组件
+
+*   React
+    – 通过 ref 属性引用 DOM 节点
+    – 高阶组件是构建高级组件的常用方法
+    – 高级交互在 React 中的实现
+    – 帮助实现条件 classNames 的一个优雅库
+*    ES6
+    – rest 解构拆分对象和数组
+
+## 引入DOM元素
+
+ref 属性可以让我们访问元素中的一个节点，遵循它的声明式编程和单向数据流。
+
+*    使用 DOM API(focus 事件,媒体播放等)
+     调用命令式 DOM 节点动画
+     与需要 DOM 节点的第三方库集成
 
 
 
+## 高阶组件（HOC）
+
+HOC 与高阶函数是等价的。它接受任何输入 - 多数时候是一个组件,也可以是可选参数 - 并返回一个组件作为输出。惯例是用“with”前缀来命名 HOC。
+
+```react
+function withFoo(Component) {
+    return function(props) {
+    	return <Component { ...props } />;
+    }
+}
+```
 
 
 
+## 高阶排序
+
+安装工具：npm install loadsh
+
+```react
+import { sortBy }from 'loadsh';
+const SORTS = {
+    NONE: list => list,
+    TITLE: list => sortBy(list, 'title'),
+    AUTHOR: list => sortBy(list, 'author'),
+    COMMENTS: list => sortBy(list, 'num_comments').reverse(),
+    POINTS: list => sortBy(list, 'points').reverse(),
+};
+```
 
 
 
+# React 状态管理与进阶
 
+## 状态提取
 
+将子状态(substate)从一个组件移动到其他组件中的重构过程被称为状态提取。
 
+状态提取的过程也可以反过来:从子组件到父组件,这种情形被称为状态提升。
+
+## 再探：setState()
+
+```react
+//传入对象
+this.setState({ foo: bar });
+// 传入函数
+this.setState((prevState, props) => {
+    const { fooCount } = prevState;
+    const { barCount } = props;
+    return { count: fooCount + barCount };
+});
+```
 
 
 
