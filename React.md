@@ -523,7 +523,7 @@ console.log(userOne, userTwo, userThree);
 
 将一个大的组件拆分成若干小组件，可以给组件传递属性并在组件中使用它们。至于 App 组件,它需要传递由本地状态(state) 托管的属性和它自己的类方法。
 
-```
+```react
 import React, { Component } from 'react';
 import './App.css';
 //声明一个列表
@@ -844,11 +844,42 @@ this.setState((prevState, props) => {
 
 
 
+```react
+<div className={`carousel-item ${item===slide_1?"active":""}`}>
+</div>
+等同于
+className={item===slide_1?"carousel-item active":"carousel-item"}
+```
 
 
 
+```react
 
-
+    constructor(props) {
+        super(props);
+        this.state={
+            isHover:0,
+        };
+    }
+    onMouseEnter = (num) => {
+         this.setState({
+             isHover:num,
+         })
+     };
+    onMouseLeave = () => {
+        this.setState({
+            isHover:0,
+        })
+    };
+render() {
+        let onMouseEnter = this.onMouseEnter;
+        let onMouseLeave = this.onMouseLeave;
+        let {isHover} = this.state;
+        return (
+            {/*获取当前的id值传入onMouseEnter，也就是num，然后拿num值与item.id比较，让它改变*/}
+			<div className="name"  onMouseEnter={()=>onMouseEnter(item.id)} onMouseLeave={onMouseLeave} ></div>
+            <a style={{display:isHover===item.id?'block':'none'}}></a>
+```
 
 
 
