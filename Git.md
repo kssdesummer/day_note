@@ -133,7 +133,7 @@
   21. `git branch -a`		//查看当前所在分支（红色），以及其他分支
   22. `git  remote show origin`		//查看当前仓库其本信息
   23. `git remote rm origin`		//删除远程库origin
-  24. `git checkout -b dev`		//创建并切换到dev分支 ：`git branch dev` ;  `dit checkout dev
+  24. `git checkout -b dev`		//创建并切换到dev分支 ：`git branch dev` ;  git checkout dev
   25. `git branch	`	//查看当前分支，代*为当前分支
   26. `git checkout master`		//切换会master分支
   27. `git merge dev`		//将指定分支合并到master上
